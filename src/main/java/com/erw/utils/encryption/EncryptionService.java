@@ -21,14 +21,14 @@ class EncryptionService{
     public EncryptionService(){
         
         try{
-            ClassPathResource publicKeyResource = new ClassPathResource("security/public_key.pub");
+            ClassPathResource publicKeyResource = new ClassPathResource("security/public_key.der");
             publicKey = PublicKeyReader.get(publicKeyResource);
         } catch (Exception e){
             logger.error("Failed to read Public Key:" + e);
         }
 
         try{
-            ClassPathResource privateKeyResource = new ClassPathResource("security/public_key");
+            ClassPathResource privateKeyResource = new ClassPathResource("security/private_key.der");
             privateKey = PrivateKeyReader.get(privateKeyResource);
         } catch (Exception e){
             logger.error("Failed to read Private Key:" + e);
